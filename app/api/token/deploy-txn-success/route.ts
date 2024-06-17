@@ -24,11 +24,11 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         {
           label: "Bridge Token",
           action: "post",
-          target: `${process.env.NEXT_PUBLIC_HOST_URL}/api/actions/bridge-token`,
+          target: `https://its-frame-workshop.vercel.app/api/actions/bridge-token`,
         },
       ],
       image: {
-        src: `${process.env.NEXT_PUBLIC_HOST_URL}/result-frame.png`,
+        src: `https://its-frame-workshop.vercel.app/result-frame.png`,
       },
     })
   );

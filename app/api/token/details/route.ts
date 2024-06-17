@@ -14,12 +14,12 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         {
           action: "tx",
           label: "Deploy",
-          target: `${process.env.NEXT_PUBLIC_HOST_URL}/api/token/deploy-txn`,
-          postUrl: `${process.env.NEXT_PUBLIC_HOST_URL}/api/token/deploy-txn-success`,
+          target: `https://its-frame-workshop.vercel.app/api/token/deploy-txn`,
+          postUrl: `https://its-frame-workshop.vercel.app/api/token/deploy-txn-success`,
         },
       ],
-      image: `${process.env.NEXT_PUBLIC_HOST_URL}/images/create.png`,
-      postUrl: `${process.env.NEXT_PUBLIC_HOST_URL}/api/token/deploy-txn`,
+      image: `https://its-frame-workshop.vercel.app/images/create.png`,
+      postUrl: `https://its-frame-workshop.vercel.app/api/token/deploy-txn`,
       state: {
         chainSelected: body.mockFrameData.button == 1 ? "base" : "none",
         data: body.untrustedData.inputText,

@@ -17,8 +17,8 @@
 //           label: "Optimism",
 //         },
 //       ],
-//       image: `${process.env.NEXT_PUBLIC_HOST_URL}/images/create.png",
-//       postUrl: `${process.env.NEXT_PUBLIC_HOST_URL}/api/middleware/next-chain",
+//       image: `https://its-frame-workshop.vercel.app/images/create.png",
+//       postUrl: `https://its-frame-workshop.vercel.app/api/middleware/next-chain",
 //       state: {
 //         actionType: c.mockFrameData.button, // button clicked by the user
 //         chain: c.mockFrameData.button,
@@ -40,9 +40,9 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   let postUrl;
   if (c.mockFrameData.button === 1) {
-    postUrl = `${process.env.NEXT_PUBLIC_HOST_URL}/api/chains/base`;
+    postUrl = `https://its-frame-workshop.vercel.app/api/chains/base`;
   } else if (c.mockFrameData.button === 2) {
-    postUrl = `${process.env.NEXT_PUBLIC_HOST_URL}/api/chains/optimism`;
+    postUrl = `https://its-frame-workshop.vercel.app/api/chains/optimism`;
   }
 
   return new NextResponse(
@@ -53,7 +53,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           label: "Next >>",
         },
       ],
-      image: `${process.env.NEXT_PUBLIC_HOST_URL}/images/create.png`,
+      image: `https://its-frame-workshop.vercel.app/images/create.png`,
       postUrl: postUrl,
       // state: {
       //   // actionType: c.mockFrameData.button, // button clicked by the user

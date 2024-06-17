@@ -17,8 +17,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           label: "Next >>",
         },
       ],
-      image: `${process.env.NEXT_PUBLIC_HOST_URL}/images/create.png`,
-      postUrl: `${process.env.NEXT_PUBLIC_HOST_URL}/api/token/details`,
+      image: `https://its-frame-workshop.vercel.app/images/create.png`,
+      postUrl: `https://its-frame-workshop.vercel.app/api/token/details`,
       state: {
         chainSelected: body.mockFrameData.button == 1 ? "base" : "none",
       },

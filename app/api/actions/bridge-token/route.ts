@@ -8,16 +8,16 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         {
           action: "post",
           label: "Base",
-          target: `${process.env.NEXT_PUBLIC_HOST_URL}/api/chains/base`,
+          target: `https://its-frame-workshop.vercel.app/api/chains/base`,
         },
         {
           action: "post",
           label: "Optimism...",
-          target: `${process.env.NEXT_PUBLIC_HOST_URL}/api/chains/optimism`,
+          target: `https://its-frame-workshop.vercel.app/api/chains/optimism`,
         },
       ],
 
-      image: `${process.env.NEXT_PUBLIC_HOST_URL}/images/select.png`,
+      image: `https://its-frame-workshop.vercel.app/images/select.png`,
     })
   );
 }

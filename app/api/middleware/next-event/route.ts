@@ -19,8 +19,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           label: "Optimism",
         },
       ],
-      image: `${process.env.NEXT_PUBLIC_HOST_URL}/images/create.png`,
-      postUrl: `${process.env.NEXT_PUBLIC_HOST_URL}/api/middleware/next-chain`,
+      image: `https://its-frame-workshop.vercel.app/images/create.png`,
+      postUrl: `https://its-frame-workshop.vercel.app/api/middleware/next-chain`,
     })
   );
 }
