@@ -71,7 +71,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse | Response> {
       abi: InterchainTokenFactoryABI,
       functionName: "deployInterchainToken",
       args: [
-        "0x", // salt
+        "0x0000000000000000000000000000000000000000000000000000000000000000", // 32-byte salt
         name,
         symbol,
         parseInt(decimals),
