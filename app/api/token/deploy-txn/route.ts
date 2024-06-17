@@ -95,7 +95,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse | Response> {
           abi: [],
           data,
           to: INTERCHAIN_TOKEN_FACTORY_ADDRESS,
-          value: "0x0",
+          value: parseEther("0.00001").toString(),
         },
       };
     } else if (chainSelected === "optimism") {
