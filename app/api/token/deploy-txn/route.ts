@@ -1,6 +1,6 @@
 import { getFarcasterUserAddress } from "@coinbase/onchainkit/farcaster";
 import { NextRequest, NextResponse } from "next/server";
-import { encodeFunctionData, parseEther } from "viem";
+import { encodeFunctionData, parseEther, parseUnits } from "viem";
 import { base, baseSepolia, optimism, optimismSepolia } from "viem/chains";
 
 import InterchainTokenFactoryABI from "../../../_contracts/InterchainTokenFactoryABI";
@@ -67,6 +67,11 @@ async function getResponse(req: NextRequest): Promise<NextResponse | Response> {
 
     console.log("User Address: ", custodyAddress);
 
+    // Calculate initial supply accounting for decimals
+    const initialSupplyBigInt = BigInt(
+      parseUnits(initialSupply, parseInt(decimals))
+    );
+
     const data = encodeFunctionData({
       abi: InterchainTokenFactoryABI,
       functionName: "deployInterchainToken",
@@ -75,7 +80,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse | Response> {
         name,
         symbol,
         parseInt(decimals),
-        BigInt(initialSupply),
+        initialSupplyBigInt,
         custodyAddress,
       ],
     });
@@ -90,7 +95,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse | Response> {
           abi: [],
           data,
           to: INTERCHAIN_TOKEN_FACTORY_ADDRESS,
-          value: parseEther("0.00001").toString(),
+          value: "0x0",
         },
       };
     } else if (chainSelected === "optimism") {
