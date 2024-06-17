@@ -39,9 +39,9 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const c = await req.json();
 
   let postUrl;
-  if (c.mockFrameData.button === 1) {
+  if (c.untrustedData.buttonIndex === 1) {
     postUrl = `https://its-frame-workshop.vercel.app/api/chains/base`;
-  } else if (c.mockFrameData.button === 2) {
+  } else if (c.mockFrameData.buttonIndex === 2) {
     postUrl = `https://its-frame-workshop.vercel.app/api/chains/optimism`;
   }
 
@@ -56,8 +56,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       image: `https://its-frame-workshop.vercel.app/images/create.png`,
       postUrl: postUrl,
       // state: {
-      //   // actionType: c.mockFrameData.button, // button clicked by the user
-      //   chain: c.mockFrameData.button,
+      //   // actionType: c.untrustedData.buttonIndex, // button clicked by the user
+      //   chain: c.untrustedData.buttonIndex,
       // },
     })
   );
