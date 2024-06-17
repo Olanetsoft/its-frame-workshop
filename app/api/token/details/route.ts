@@ -14,12 +14,12 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         {
           action: "tx",
           label: "Deploy",
-          target: "http://localhost:3000/api/token/deplot-txn",
-          postUrl: "http://localhost:3000/api/token/deploy-txn-success",
+          target: `${process.env.NEXT_PUBLIC_HOST_URL}/api/token/deplot-txn`,
+          postUrl: `${process.env.NEXT_PUBLIC_HOST_URL}/api/token/deploy-txn-success`,
         },
       ],
-      image: "http://localhost:3000/images/create.png",
-      postUrl: "http://localhost:3000/api/token/deploy-txn",
+      image: `${process.env.NEXT_PUBLIC_HOST_URL}/images/create.png`,
+      postUrl: `${process.env.NEXT_PUBLIC_HOST_URL}/api/token/deploy-txn`,
       state: {
         chainSelected: body.mockFrameData.button == 1 ? "base" : "none",
         data: body.untrustedData.inputText,

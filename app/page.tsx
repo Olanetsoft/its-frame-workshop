@@ -6,8 +6,8 @@ const appInfo = {
   name: "Farcaster Frame to Bridge Token with Interchain Token Service",
   description:
     "Build a Farcaster frame to Bridge Token with Interchain Token Service",
-  image: "http://localhost:3000/images/home.png",
-  postUrl: "http://localhost:3000/api/home",
+  image: `${process.env.NEXT_PUBLIC_HOST_URL}/images/home.png`,
+  postUrl: `${process.env.NEXT_PUBLIC_HOST_URL}/api/home`,
 };
 
 const frameMetadata = getFrameMetadata({

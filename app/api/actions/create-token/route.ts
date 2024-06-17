@@ -8,17 +8,17 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         {
           action: "post",
           label: "Base",
-          target: "http://localhost:3000/api/chains/base",
+          target: `${process.env.NEXT_PUBLIC_HOST_URL}/api/chains/base`,
         },
         {
           action: "post",
           label: "Optimism",
-          target: "http://localhost:3000/api/chains/optimism",
+          target: `${process.env.NEXT_PUBLIC_HOST_URL}/api/chains/optimism`,
         },
       ],
 
-      image: "http://localhost:3000/images/select.png",
-      postUrl: "http://localhost:3000/api/middleware/next-event",
+      image: `${process.env.NEXT_PUBLIC_HOST_URL}/images/select.png`,
+      postUrl: `${process.env.NEXT_PUBLIC_HOST_URL}/api/middleware/next-event`,
     })
   );
 }

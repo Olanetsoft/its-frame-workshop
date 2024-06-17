@@ -11,11 +11,11 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         {
           action: "post",
           label: "create on optimism",
-          // target: "http://localhost:3000/api/actions/create-token",
+          // target: `${process.env.NEXT_PUBLIC_HOST_URL}/api/actions/create-token`,
         },
       ],
-      image: "http://localhost:3000/images/create.png",
-      //   postUrl: "http://localhost:3000/api/middleware/next-event",
+      image: `${process.env.NEXT_PUBLIC_HOST_URL}/images/create.png`,
+      //   postUrl: `${process.env.NEXT_PUBLIC_HOST_URL}/api/middleware/next-event`,
       state: {
         chainSelected: "optimism",
       },
