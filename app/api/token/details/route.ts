@@ -21,7 +21,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       image: `https://its-frame-workshop.vercel.app/images/create.png`,
       postUrl: `https://its-frame-workshop.vercel.app/api/token/deploy-txn`,
       state: {
-        chainSelected: body.mockFrameData.button == 1 ? "base" : "none",
+        chainSelected: body.untrustedData.buttonIndex == 1 ? "base" : "none",
         data: body.untrustedData.inputText,
       },
     })

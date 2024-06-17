@@ -41,7 +41,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   let postUrl;
   if (c.untrustedData.buttonIndex === 1) {
     postUrl = `https://its-frame-workshop.vercel.app/api/chains/base`;
-  } else if (c.mockFrameData.buttonIndex === 2) {
+  } else if (c.untrustedData.buttonIndex === 2) {
     postUrl = `https://its-frame-workshop.vercel.app/api/chains/optimism`;
   }
 
