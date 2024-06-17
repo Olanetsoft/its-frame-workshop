@@ -16,10 +16,22 @@ async function getResponse(req: NextRequest): Promise<NextResponse | Response> {
     const body = await req.json();
     console.log(body);
 
-    // Parse the serialized data
+    // Decode the URL-encoded serialized state
+    let decodedState;
+    try {
+      decodedState = decodeURIComponent(body.untrustedData.state);
+    } catch (error) {
+      console.error("Error decoding state:", error);
+      return NextResponse.json(
+        { error: "Invalid state format" },
+        { status: 400 }
+      );
+    }
+
+    // Parse the decoded state
     let parsedState;
     try {
-      parsedState = JSON.parse(body.untrustedData.state);
+      parsedState = JSON.parse(decodedState);
     } catch (error) {
       console.error("Error parsing serialized state:", error);
       return NextResponse.json(
