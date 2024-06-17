@@ -8,7 +8,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   return new NextResponse(
     getFrameHtmlResponse({
       input: {
-        text: "Name, Symbol, Decimals, initial Supply",
+        text: "Name, Symbol, Decimals, Supply",
       },
 
       buttons: [

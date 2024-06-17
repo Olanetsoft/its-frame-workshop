@@ -12,10 +12,10 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           label: `${body.untrustedData.inputText}`,
         },
         {
-          action: "tx",
+          action: "post",
           label: "Deploy",
-          target: `${process.env.NEXT_PUBLIC_HOST_URL}/api/token/deplot-txn`,
-          postUrl: `${process.env.NEXT_PUBLIC_HOST_URL}/api/token/deploy-txn-success`,
+          target: `${process.env.NEXT_PUBLIC_HOST_URL}/api/token/deploy-txn`,
+          //   postUrl: `${process.env.NEXT_PUBLIC_HOST_URL}/api/token/deploy-txn-success`,
         },
       ],
       image: `${process.env.NEXT_PUBLIC_HOST_URL}/images/create.png`,
