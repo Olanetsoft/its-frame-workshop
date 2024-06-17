@@ -76,7 +76,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse | Response> {
       abi: InterchainTokenFactoryABI,
       functionName: "deployInterchainToken",
       args: [
-        "0x0000000000000000000000000000000000000000000000000000000000000000", // 32-byte salt
+        "0x0000000000000000000000000000000000000000000000000000000000000010", // 32-byte salt
         name,
         symbol,
         parseInt(decimals),
@@ -95,7 +95,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse | Response> {
           abi: [],
           data,
           to: INTERCHAIN_TOKEN_FACTORY_ADDRESS,
-          value: parseEther("0.00001").toString(),
+          value: "0x0",
         },
       };
     } else if (chainSelected === "optimism") {
